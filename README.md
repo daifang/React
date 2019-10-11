@@ -8,7 +8,7 @@ $ npm i -g create-react-app
 ```
 $ npm start
 ```
-## 第一步
+## 基本知识
 * ## `引入模块`
    ```
       import [Name] from './src';
@@ -146,6 +146,7 @@ $ npm start
          data:PropTypes.string
       }
    ```
+*2019-10-11_完成以上*
 * ## `React 方法`
    * 
 # `用到的ES6方法`
