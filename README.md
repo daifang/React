@@ -1,5 +1,5 @@
 # `React`
-
+*[ES6_mine](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)*
 ## `全局安装`
 ```
 $ npm i -g create-react-app
@@ -10,16 +10,24 @@ $ npm start
 ```
 ## 基本知识
 * ## `引入模块`
+   * 建议使用import
    ```
       import [Name] from './src';
 
       var Name = require('./src');
    ```
 * ## `渲染`
+   * 简单渲染
    ```
-      //在id为 root 的节点下 创建一个ele，ele可以自己用JSX定义
+      //在id为 root 的节点下 创建并添加一个ele，ele可以自己用JSX定义
       var ele = <h1>Hello React</h1>
       ReactDom.render(ele,document.getElementbyId('root'));
+   ```
+   * 引入组件渲染
+      
+   ```
+      import App from './app.js';
+      ReactDom.render(<App/>,document.getElementbyId('root'));
    ```
 * ## `JSX`
    ```
@@ -30,6 +38,7 @@ $ npm start
       var ele_1 = <h1>{str}</h1>; 
    ```
    * React元素一旦创建，其内容不会再被修改
+   * 更新元素的方法，ReactDom.render()/this.setState({})
 * ## `组件`
    * 可以理解为部分，零件，制作汽车一定会先造各个零件再到车间进行组装各个部分，然后再进行最终组装，而组件就是各个部分
    * 组件会返回一个React元素
@@ -147,17 +156,29 @@ $ npm start
       }
    ```
 *2019-10-11_完成以上*
+
+* ## `DefaultProps`
+    * 如果this.prpos中有一个name属性则可以设置默认值
+    ```
+      Hello.defaultProps = {
+         name:'Tom'
+      }
+    ```
+* ## `受控组件`
+   * 组件节点的各种值都是从this.state中获取，渲染需要用到this.setState
+* ## `非受控组件`
+   * 组件节点的改变使用refs进行操控，不必使用state
 * ## `React 方法`
    * 
 # `用到的ES6方法`
-### Object.assign(obj_a,obj_b,obj_c,······)
+## Object.assign(obj_a,obj_b,obj_c,······)
    * ### `把后面的对象整合到第一个对象上`
    * ### 拷贝
       ```
          var obj = {a:100};
          var obj_new = Object.assign({},obj);
       ```
-### Object.keys(obj)
+## Object.keys(obj)
    * ### `遍历对象`
    * 示例
       
@@ -166,9 +187,13 @@ $ npm start
             console.log(item);
          });
       ```
-### this.setState({}) 
+## this.setState({}) 
    * ### `异步`
       ```
          //state 获取的是state的上一个状态
          this.setState((state,props)=>({todo:state.todo+1}))
+         //写法二
+         this.setState({
+            todo:this.state.todo + 1
+         })
       ```
