@@ -170,6 +170,27 @@ $ npm start
    * 组件节点的改变使用refs进行操控，不必使用state
 * ## `React 方法`
    * 
+* ## `this.setState({})` 
+   * ### 写法
+      ```
+         //state 获取的是state的上一个状态
+         this.setState((state,props)=>({todo:state.todo+1}))
+
+         //写法二
+         
+         this.setState({
+            todo:this.state.todo + 1
+         })
+
+         //有什么同步的操作需要放到CallBack中执行，否则不能达到预期效果
+         //执行顺序同步-->异步-->回调
+
+         this.setState({
+            todo:this.state.todo + 1
+         },()=>{
+            console.log(this.state.todo);
+         })
+      ```
 # `用到的ES6方法`
 ## Object.assign(obj_a,obj_b,obj_c,······)
    * ### `把后面的对象整合到第一个对象上`
@@ -187,20 +208,4 @@ $ npm start
             console.log(item);
          });
       ```
-## this.setState({}) 
-   * ### `异步执行`
-      ```
-         //state 获取的是state的上一个状态
-         this.setState((state,props)=>({todo:state.todo+1}))
-         //写法二
-         this.setState({
-            todo:this.state.todo + 1
-         })
-         //有什么同步的操作需要放到CallBack中执行，否则不能达到预期效果
-         //执行顺序同步-->异步-->回调
-         this.setState({
-            todo:this.state.todo + 1
-         },()=>{
-            console.log(this.state.todo);
-         })
-      ```
+
