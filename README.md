@@ -188,12 +188,19 @@ $ npm start
          });
       ```
 ## this.setState({}) 
-   * ### `异步`
+   * ### `异步执行`
       ```
          //state 获取的是state的上一个状态
          this.setState((state,props)=>({todo:state.todo+1}))
          //写法二
          this.setState({
             todo:this.state.todo + 1
+         })
+         //有什么同步的操作需要放到CallBack中执行，否则不能达到预期效果
+         //执行顺序同步-->异步-->回调
+         this.setState({
+            todo:this.state.todo + 1
+         },()=>{
+            console.log(this.state.todo);
          })
       ```
