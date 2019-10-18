@@ -10,8 +10,8 @@ export default class TodoShow extends Component {
         
     }
     data = (data,schedule)=>{
-        console.log(2);
-        console.log(data);
+        // console.log(2);
+        // console.log(data);
         if(data.length === 0){
             return ;
         }else{
