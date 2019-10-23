@@ -210,7 +210,7 @@ $ npm start
          var obj = {a:100};
          var obj_new = Object.assign({},obj);
       ```
-## Object.keys(obj)
+## Object.keys(obj).forEach(item=>{})
    * ### `遍历对象`
    * 示例
       
@@ -220,3 +220,16 @@ $ npm start
          });
       ```
 
+## Array.map((item,index)=>{})
+
+   * ### `遍历数组`
+   * 示例
+      ```
+         let arr = [0,1,2,3,4,5,6];
+         arr.map((item,index)=>{
+            //item:值
+            //index:索引
+            console.log('arr['+index+']' + ':' + item);
+         })
+         //arr[0]:0 // arr[1]:1 // arr[2]:2 // arr[3]:3 // arr[4]:4 // arr[5]:5 // arr[6]:6
+      ```
