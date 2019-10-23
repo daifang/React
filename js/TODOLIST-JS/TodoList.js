@@ -55,6 +55,4 @@ export default class TodoList extends Component {
             </div>
         )
     }
-
-    
 }

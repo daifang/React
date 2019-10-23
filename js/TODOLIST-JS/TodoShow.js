@@ -7,7 +7,6 @@ export default class TodoShow extends Component {
     getChecked = (e)=>{
         var obj = {id:e.target.id,checked:e.target.checked};
         this.props.finish(obj);
-        
     }
     data = (data,schedule)=>{
         // console.log(2);
@@ -54,7 +53,6 @@ export default class TodoShow extends Component {
                 }
             })
         }
-        
     }
     number = (data,schedule)=>{
         let num = 0;
