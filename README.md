@@ -9,13 +9,16 @@ $ npm i -g create-react-app
 $ create-react-app [fileName]
 
 //如果安装成功提示不是内部或外部命令
+//npx:会自动到目录下查询命令文件，具体信息请看代码块下方链接
 
 $ npx create-react-app [fileName]
 ```
+[npx](http://www.ruanyifeng.com/blog/2019/02/npx.html)
 ## `启动APP`
 ```
 $ npm start
 ```
+****
 ## 基本知识
 * ## `引入模块`
    * 建议使用import
