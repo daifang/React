@@ -6,9 +6,10 @@ $ npm i -g create-react-app
 ```
 ## `创建第一个App`
 ```
-//一般方法
 $ create-react-app [fileName]
+
 //如果安装成功提示不是内部或外部命令
+
 $ npx create-react-app [fileName]
 ```
 ## `启动APP`
