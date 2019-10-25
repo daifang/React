@@ -55,7 +55,23 @@ $ npm start
    * 组件都会返回一个React元素
    * props:用于组件之间的通信，父组件<-->子组件，是只读的,大多数是父组件从子组件获取数据再进行操作
    * 组件命名 首字母大写
+   * 
+      周期类|含义
+      -|-
+      Mounting|已经插入真实DOM
+      Updating|加载中/正在重新渲染
+      unMounting|已经移出DOM
+   *  
+      周期函数|何时调用
+      -|-
+      componentWillMount|渲染前调用
+      componentDidMount|第一次渲染完成后调用
+      componentWillReceiveProps|组件接受一个新的props时调用，但在第一次渲染时不会被调用
+      shouldComponentUpdate|返回布尔值，确认是否进行更新
+      componentDidUpdate|组件完成更新后立即调用
+      componentWillUnmount|组件从DOM移除之前立即调用
       
+
    ```
       //建议 使用 import
       import React from 'react';
@@ -172,7 +188,7 @@ $ npm start
     * 如果this.prpos中有一个name属性则可以设置默认值
     ```
       Hello.defaultProps = {
-         name:'Tom'
+         name:'daifang'
       }
     ```
 * ## `受控组件`
@@ -181,6 +197,32 @@ $ npm start
    * 组件节点的改变使用refs进行操控，不必使用state
 * ## `React 方法`
    * 
+* ## `Hook实现组件(只可以在函数组件中使用)`
+   * useState:实现setState和初始设置state
+   * useEffect:实现组件的生命周期函数
+   * 
+      参数|含义
+      -|-
+      callback|声明周期到达时执行的方法
+      arr|数组当中可以定义判断条件，当数组中的元素和之前状态不同时会调用函数，反之不会执行函数体
+   * 使用方法
+   ```
+      import {useState,useEffect} from 'react';
+      function Name(){
+         //设置初始值‘daifang’，并创建一个类似setState的方法，但是它不是异步执行的，最好写在组件的最上方
+         
+         let [name,setName] = useState('daifang');
+
+         //useEffect = componentDidMound + componentDidUpdate
+
+         useEffect(()=>{
+            /*do something*/
+            setName('fangdai');
+
+         },[/*条件依赖*/]);
+      }
+   ```
+   ***2019-10-25-Hook***
 * ## `this.setState({})` 
    * ### 写法
       ```
