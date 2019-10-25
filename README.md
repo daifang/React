@@ -18,6 +18,11 @@ $ npx create-react-app [fileName]
 ```
 $ npm start
 ```
+## `后续安装路由的命令`
+   * 新建一个新项目就要安一次，如果用得到的话
+```
+$ npm i reate-router-dom
+```
 ****
 ## 基本知识
 * ## `引入模块`
@@ -195,8 +200,6 @@ $ npm start
    * 组件节点的各种值都是从this.state中获取，渲染需要用到this.setState
 * ## `非受控组件`
    * 组件节点的改变使用refs进行操控，不必使用state
-* ## `React 方法`
-   * 
 * ## `Hook实现组件(只可以在函数组件中使用)`
    * useState:实现类似setState函数和初始设置state
    * useEffect:实现类似组件的生命周期函数
@@ -220,11 +223,43 @@ $ npm start
             setName('fangdai');
 
          },[/*条件依赖*/]);
-
+         //当条件依赖为空数组时,执行一次后结束
          //useEffect 可以创建多个，根据条件依赖进行判断是否要执行对应的代码段
       }
    ```
-   ***2019-10-25-Hook***
+   * 自定义Hook
+   ```
+   function useFetch(url){
+      let [data,setData] = useState;
+      useEffect(()=>{
+         fetch(url).then(res=>res.json()).then(data=>{
+            setData(data);
+         })
+      });
+      return data;
+   }
+
+
+   //调用
+   function Topic(){
+      //url为后端提供的接口
+      let data = useFetch(url);
+
+      return (
+         <ul>
+            data.map((item,index)=>{
+               return (
+                  <ul>
+                     <li key = {index}>{item}</li>
+                  </ul>
+               )
+            })
+         </ul>
+      )
+   }
+   ```
+
+***2019-10-25-Hook***
 * ## `Router`
    * Router
    * Route
@@ -295,6 +330,7 @@ $ npm start
          })
       ```
 # `用到的ES6方法`
+   * [详情请点击](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)
 ## Object.assign(obj_a,obj_b,obj_c,······)
    * ### `把后面的对象整合到第一个对象上`
    * ### 拷贝
