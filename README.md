@@ -198,8 +198,8 @@ $ npm start
 * ## `React 方法`
    * 
 * ## `Hook实现组件(只可以在函数组件中使用)`
-   * useState:实现setState和初始设置state
-   * useEffect:实现组件的生命周期函数
+   * useState:实现类似setState函数和初始设置state
+   * useEffect:实现类似组件的生命周期函数
    * 
       参数|含义
       -|-
@@ -210,7 +210,7 @@ $ npm start
       import {useState,useEffect} from 'react';
       function Name(){
          //设置初始值‘daifang’，并创建一个类似setState的方法，但是它不是异步执行的，最好写在组件的最上方
-         
+
          let [name,setName] = useState('daifang');
 
          //useEffect = componentDidMound + componentDidUpdate
@@ -220,9 +220,59 @@ $ npm start
             setName('fangdai');
 
          },[/*条件依赖*/]);
+
+         //useEffect 可以创建多个，根据条件依赖进行判断是否要执行对应的代码段
       }
    ```
    ***2019-10-25-Hook***
+* ## `Router`
+   * Router
+   * Route
+   * Link
+   *  代码展示(仅展示结构，不是最终代码，该结构是放到组件中return出来的)
+      ```
+         //引入
+         import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+         //外部套一个Router标签对儿
+         <Router>
+            <ul>
+               //路由的设置
+               <li>
+                  <Link to = '/daifang'>daifang</Link>
+               </li>
+               <li>
+                  <Link to = '/fangdai'>fangdai</Link>
+               </li>             
+            </ul>
+            //组件加载，这个标签在哪，组件就会加载到哪里
+            <Route path='daifang' component = {Daifang}/>
+            <Route path='fangdai' component = {Fangdai}/>
+         </Router>
+
+      ``` 
+* ## `createContext()`
+   * React.createContext()
+   * React.useContext()
+   * Provider
+   * 使用代码
+   ```
+      //嫌引入麻烦可以解构引入
+      import React from 'react';
+      let ctx = React.createContext();
+      //标签内的组件都可以访问data
+      <ctx.Provider data={{name:'daifang',pwd:'fangdai'}}>
+         <Daifang/>
+         <Fangdai/>
+      </ctx.Provider>
+   ```
+   * 组件获取数据的方法
+   * Daifang组件,Fangdai组件相同操作
+   ```
+      function Daifang(){
+         let data = React.useContext(ctx);
+         console.log(ctx);
+      }
+   ```
 * ## `this.setState({})` 
    * ### 写法
       ```
