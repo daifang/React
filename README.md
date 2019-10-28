@@ -23,6 +23,11 @@ $ npm start
 ```
 $ npm i reate-router-dom
 ```
+
+## `打包代码`
+```
+$ npm run build
+```
 ****
 ## 基本知识
 * ## `引入模块`
@@ -69,11 +74,11 @@ $ npm i reate-router-dom
    *  
       周期函数|何时调用
       -|-
-      componentWillMount|渲染前调用
-      componentDidMount|第一次渲染完成后调用
+      **componentWillMount**|渲染前调用
+      **componentDidMount**|第一次渲染完成后调用
       componentWillReceiveProps|组件接受一个新的props时调用，但在第一次渲染时不会被调用
-      shouldComponentUpdate|返回布尔值，确认是否进行更新
-      componentDidUpdate|组件完成更新后立即调用
+      **shouldComponentUpdate**|返回布尔值，确认是否进行更新
+      **componentDidUpdate**|组件完成更新后立即调用
       componentWillUnmount|组件从DOM移除之前立即调用
       
 
