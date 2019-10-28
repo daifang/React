@@ -1,3 +1,13 @@
+## 索引
+<a href = '#a1'>基本知识</a> 
+<a href = ''></a> 
+<a href = ''></a> 
+<a href = ''></a> 
+<a href = ''></a> 
+<a href = ''></a> 
+<a href = ''></a> 
+
+
 # `React`
 *[ES6_mine](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)*
 ## `全局安装`
@@ -29,7 +39,7 @@ $ npm i reate-router-dom
 $ npm run build
 ```
 ****
-## 基本知识
+## <a name='a1'>基本知识</a>
 * ## `引入模块`
    * 建议使用import
    ```
