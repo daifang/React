@@ -6,7 +6,7 @@
 
 # `React`
 *[ES6_mine](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)*
-## <a name='a2'>`全局安装`</a>
+## <a name='a1'>`全局安装`</a>
 ```
 $ npm i -g create-react-app
 ```
@@ -35,7 +35,7 @@ $ npm i reate-router-dom
 $ npm run build
 ```
 ****
-## <a name='a1'>`基本知识`</a>
+## <a name='a2'>`基本知识`</a>
 * ## `引入模块`
    * 建议使用import
    ```
