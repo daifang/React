@@ -299,7 +299,7 @@ $ npm run build
 * ## `createContext()`
    * React.createContext()
    * React.useContext()
-   * Provider
+   * Provider/Consumer
    * 使用代码
    ```
       //嫌引入麻烦可以解构引入
@@ -310,6 +310,20 @@ $ npm run build
          <Daifang/>
          <Fangdai/>
       </ctx.Provider>
+      
+
+
+      /*<ctx.Consumer>
+         <ul>{
+            (data)=>{
+               return(
+                  data.map(item=>{
+                     return (<li><span>{item}</span></li>)
+                  })
+               )
+            }}
+         </ul>
+      </ctx.Consumer>*/
    ```
    * 组件获取数据的方法
    * Daifang组件,Fangdai组件相同操作
@@ -319,6 +333,7 @@ $ npm run build
          console.log(ctx);
       }
    ```
+   * 还可以使用Consumer接受数据，Consumer里包裹一个函数，函数的参数就是在Provider当中填写的data，见上上面注释代码
 * ## `this.setState({})` 
    * ### 写法
       ```
