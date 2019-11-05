@@ -4,6 +4,7 @@
 <a href = '#a3'>ES6</a> 
 
 
+
 # `React`
 *[ES6_mine](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)*
 ## <a name='a1'>`全局安装`</a>
@@ -29,7 +30,12 @@ $ npm start
 ```
 $ npm i reate-router-dom
 ```
+## `Redux`
+```
+$ npm i react-redux --save
 
+$ npm i --save redux-thunk
+```
 ## `打包代码`
 ```
 $ npm run build
@@ -82,12 +88,9 @@ $ npm run build
       -|-
       **componentWillMount**|渲染前调用
       **componentDidMount**|第一次渲染完成后调用
-      componentWillReceiveProps|组件接受一个新的props时调用，但在第一次渲染时不会被调用
       **shouldComponentUpdate**|返回布尔值，确认是否进行更新
       **componentDidUpdate**|组件完成更新后立即调用
-      componentWillUnmount|组件从DOM移除之前立即调用
-      
-
+      **componentWillUnmount**|组件从DOM移除之前立即调用
    ```
       //建议 使用 import
       import React from 'react';
@@ -96,7 +99,6 @@ $ npm run build
          constructor(){
             //必须先调用super()，否则无法使用props
             super();
-
             //设置初始状态，子组件的props可以进行访问但不可修改
             this.state = {
                one:[],//array
@@ -104,29 +106,13 @@ $ npm run build
                three:''//string
             }
          }
-
          //渲染函数，必须存在，否则无法运行
          render(){
-
+            return(
+               <div></div>
+            )
          }
-         //周期函数
-          static getDerivedStateFromProps(){
-             //挂载中
-             //个人理解相当于，加载中或加载完成后的加载进程
-
-          }
-         componentDidMount(){
-            //挂载完成，个人理解相当于页面加载完成时
-            //可以写一些请求操作
-
-         }
-
-          componentDidCatch(){
-             //错误处理
-          } 
-
       }
-
    ```      
 * ## `事件`
    * 点击弹出窗口
@@ -193,7 +179,6 @@ $ npm run build
    ```
       //当data的数据类型不是String时，控制台会进行⚠，说明data不
       //是期望的String类型
-
       App.PropTypes = {
          data:PropTypes.string
       }
@@ -310,20 +295,7 @@ $ npm run build
          <Daifang/>
          <Fangdai/>
       </ctx.Provider>
-      
 
-
-      /*<ctx.Consumer>
-         <ul>{
-            (data)=>{
-               return(
-                  data.map(item=>{
-                     return (<li><span>{item}</span></li>)
-                  })
-               )
-            }}
-         </ul>
-      </ctx.Consumer>*/
    ```
    * 组件获取数据的方法
    * Daifang组件,Fangdai组件相同操作
@@ -333,7 +305,20 @@ $ npm run build
          console.log(ctx);
       }
    ```
-   * 还可以使用Consumer接受数据，Consumer里包裹一个函数，函数的参数就是在Provider当中填写的data，见上上面注释代码
+   * 还可以使用Consumer接受数据，Consumer里包裹一个函数，函数的参数就是在Provider当中填写的data
+   ```
+      <ctx.Consumer>
+         <ul>{
+            (data)=>{
+               return(
+                  data.map(item=>{
+                     return (<li><span>{item}</span></li>)
+                  })
+               )
+            }}
+         </ul>
+      </ctx.Consumer>
+   ```
 * ## `this.setState({})` 
    * ### 写法
       ```
@@ -341,7 +326,6 @@ $ npm run build
          this.setState((state,props)=>({todo:state.todo+1}))
 
          //写法二
-         
          this.setState({
             todo:this.state.todo + 1
          })
@@ -367,13 +351,11 @@ $ npm run build
 ## Object.keys(obj).forEach(item=>{})
    * ### `遍历对象`
    * 示例
-      
        ```
          Object.keys(obj).forEach((item)=>{
             console.log(item);
          });
       ```
-
 ## Array.map((item,index)=>{})
 
    * ### `遍历数组`
