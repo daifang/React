@@ -339,6 +339,58 @@ $ npm run build
             console.log(this.state.todo);
          })
       ```
+* ## `Redux`
+   * ### 代替组件的state为普通对象
+   * ### `思想`
+   * ### Store Action Reducer
+   * ### Store 
+   * ### Reducer 接受state和action并根据action.type返回对应的state
+
+* ## `Webpack 搭建 React环境`
+   * 安装yarn
+      ```
+      $ yarn  npm i yarn -g
+      ```
+   * 初始化 
+      ```
+      $ yarn init -y
+      ```
+   * 安装webpack
+      ```
+      $ yarn add webpack webpack-cli -D
+      ```
+   * 打包
+      ```
+      $ npx webpack
+      ```
+   * 服务
+      ```
+      $ yarn add webpack-dev-server -D
+      //启动
+      $ npx webpack-dev-server
+      ```
+   * 生成html文件,可以热启动
+      ```
+      //打包到内存，然后再显示，内存中有一个html一个js同级关系
+      $ yarn add html-webpack-plugin -D
+      ```
+   * 加载 css
+      ```
+      //css-loader 将所有css合并
+      //style-loader 将css加到style标签
+      $ yarn add css-loadern style-loader -D
+      ```
+   * 加载 less 文件
+      ```
+      $ yarn add less-loader less -D
+      ```
+   * 安装 React
+      ```
+      $ yarn add React React-dom
+      ```
+   * 配置完成后 ，可以使用了！
+
+
 # <a name='a3'>`用到的ES6方法`</a>
    * [详情请点击](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)
 ## Object.assign(obj_a,obj_b,obj_c,······)
@@ -357,7 +409,6 @@ $ npm run build
          });
       ```
 ## Array.map((item,index)=>{})
-
    * ### `遍历数组`
    * 示例
       ```
