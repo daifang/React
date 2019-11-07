@@ -2,7 +2,7 @@
 <a href = '#a1'>全局安装</a>  
 <a href = '#a2'>基本知识</a>  
 <a href = '#a3'>ES6</a> 
-
+<a href = '#a4'>React Native</a>
 
 
 # `React`
@@ -42,14 +42,25 @@ $ npm run build
 ```
 ****
 ## <a name='a2'>`基本知识`</a>
-* ## `引入模块`
+   * <a href = 'aa1'>引入模块</a>
+   * <a href = 'aa2'>渲染</a>
+   * <a href = 'aa3'>JSX</a>
+   * <a href = 'aa4'>组件</a>
+   * <a href = 'aa5'>事件</a>
+   * <a href = 'aa6'>PropTypes</a>
+   * <a href = 'aa7'>受控组件/非受控组件</a>
+   * <a href = 'aa8'>Hook</a>
+   * <a href = 'aa9'>Router</a>
+   * <a href = 'aa10'>Context</a>
+
+* ## <a name='aa1'>`引入模块`</a>
    * 建议使用import
    ```
       import [Name] from './src';
 
       var Name = require('./src');
    ```
-* ## `渲染`
+* ## <a name='aa2'>`渲染`</a>
    * 简单渲染
    ```
       //在id为 root 的节点下 创建并添加一个ele，ele可以自己用JSX定义
@@ -62,7 +73,7 @@ $ npm run build
       import App from './app.js';
       ReactDom.render(<App/>,document.getElementbyId('root'));
    ```
-* ## `JSX`
+* ## <a name='aa3'>`JSX`</a>
    ```
       var ele = <h1>Hello React</h1>;
 
@@ -72,7 +83,7 @@ $ npm run build
    ```
    * React元素一旦创建，其内容不会再被修改
    * 更新元素的方法，ReactDom.render()/this.setState({})
-* ## `组件`
+* ## <a name='aa4'>`组件`</a>
    * 可以理解为部分，零件，制作汽车一定会先造各个零件再到车间进行组装各个部分，然后再进行最终组装，而组件就是各个部分
    * 组件都会返回一个React元素
    * props:用于组件之间的通信，父组件<-->子组件，是只读的,大多数是父组件从子组件获取数据再进行操作
@@ -114,7 +125,7 @@ $ npm run build
          }
       }
    ```      
-* ## `事件`
+* ## <a name='aa5'>`事件`</a>
    * 点击弹出窗口
    ```
       import React from 'react';
@@ -168,7 +179,7 @@ $ npm run build
       };
    }
    ```
-* ## `PropTypes`
+* ## <a name='aa6'>`PropTypes`</a>
    * 校验数据类型
    * 仅限于开发过程中使用
    * 引用
@@ -185,18 +196,18 @@ $ npm run build
    ```
 *2019-10-11_完成以上*
 
-* ## `DefaultProps`
+* ## <a name='aa6'>`DefaultProps`</a>
     * 如果this.prpos中有一个name属性则可以设置默认值
     ```
       Hello.defaultProps = {
          name:'daifang'
       }
     ```
-* ## `受控组件`
+* ## <a name='aa7'>`受控组件`</a>
    * 组件节点的各种值都是从this.state中获取，渲染需要用到this.setState
 * ## `非受控组件`
    * 组件节点的改变使用refs进行操控，不必使用state
-* ## `Hook实现组件(只可以在函数组件中使用)`
+* ## <a name='aa8'>`Hook实现组件(只可以在函数组件中使用)`</a>
    * useState:实现类似setState函数和初始设置state
    * useEffect:实现类似组件的生命周期函数
    * 
@@ -256,7 +267,7 @@ $ npm run build
    ```
 
 ***2019-10-25-Hook***
-* ## `Router`
+* ## <a name='aa9'>`Router`</a>
    * Router
    * Route
    * Link
@@ -281,7 +292,7 @@ $ npm run build
          </Router>
 
       ``` 
-* ## `createContext()`
+* ## <a name='aa10'>`createContext()`</a>
    * React.createContext()
    * React.useContext()
    * Provider/Consumer
@@ -319,7 +330,7 @@ $ npm run build
          </ul>
       </ctx.Consumer>
    ```
-* ## `this.setState({})` 
+* ## `this.setState({})`
    * ### 写法
       ```
          //state 获取的是state的上一个状态
@@ -388,9 +399,17 @@ $ npm run build
       ```
       $ yarn add React React-dom
       ```
+   * 使用 JSX
+      ```
+      $ yarn add babel-loader@8.0.0-beta.0 @babel/core @babel/preset-env -D
+      ```
    * 配置完成后 ，可以使用了！
 
+* ## <a name='a4'>`React-Native`</a>
+   * 安装
+   ```
 
+   ```
 # <a name='a3'>`用到的ES6方法`</a>
    * [详情请点击](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)
 ## Object.assign(obj_a,obj_b,obj_c,······)
