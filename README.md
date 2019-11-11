@@ -433,6 +433,10 @@ $ npm run build
       * react-native 命令(简单)
          * 1 安装
             ```
+            //方法一
+            $ npm i -g react-native-cli
+
+            //方法二(推荐)
             //没有yarn先安yarn
             $ yarn add global react-native-cli
             ```
