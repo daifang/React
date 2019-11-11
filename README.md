@@ -427,7 +427,8 @@ $ npm run build
          * 3 配置系统变量
             * 新建 *JAVA_HOME* 路径是 *jdk* 路径
             * 系统变量 *Path* 下新建 路径填写 *jdk* 下 *bin* 路径
-            * 新建 *classpath* 填写 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar(非常重要，不然代码运行不动)
+            * 新建 *classpath* 填写   .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar  (非常重要，不然代码运行不动)
+         * 4 完成
       * react-native 命令(简单)
          * 1 安装
             ```
@@ -447,6 +448,7 @@ $ npm run build
             //在环境中安装并运行，代码可以先粘一份Hello world 试一试
             $ react-native run-android
             ```
+         * 4 完成
 **** 
 ### daifang  修改 2019-11-11
 # <a name='a3'>`用到的ES6方法`</a>
