@@ -411,9 +411,6 @@ $ npm run build
    * 配置完成后 ，可以使用了！
 
 * ## <a name='a4'>`React-Native`</a>
-   * 坑
-      * npm 全局安装的命令无法识别 ---> 解决方法：手动配置环境变量.解决之后连速度都快了呢(谁知道真假哈哈哈)
-      * 搞了2天仅仅才能在模拟器上运行....，太菜了
    * 环境安装(Android Studio + java + react-native)
       * Android Stdio安装
          * 1 下载并安装
