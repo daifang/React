@@ -450,7 +450,7 @@ $ npm run build
             $ react-native run-android
             ```
          * 4 完成
-         <img src="https://github.com/daifang/node-work/blob/master/xlzy/img/helloworld.png" width:"200" />
+         ![效果](https://github.com/daifang/node-work/blob/master/xlzy/img/helloworld.png)
 **** 
 ### daifang  修改 2019-11-11
 # <a name='a3'>`用到的ES6方法`</a>
