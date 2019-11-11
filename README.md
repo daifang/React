@@ -417,12 +417,12 @@ $ npm run build
    * 环境安装(Android Studio + java + react-native)
       * Android Stdio安装
          * 1 下载并安装
-         * 2 选择自定义，自定义*SDK*的安装路径(很重要)和软件的安装路径，其他的默认就好
-         * 3 设置环境变量，新建*ANDROID_HOME*路径写*SDK*的路径
-         * 4 系统变量*PATH*中将*SDK*的*platform-tools*和*tools*路径填写进去
+         * 2 选择自定义，自定义 *SDK* 的安装路径(很重要)和软件的安装路径，其他的默认就好
+         * 3 设置环境变量，新建 *ANDROID_HOME* 路径写 *SDK* 的路径
+         * 4 系统变量 *PATH* 中将 *SDK* 的 *platform-tools* 和 *tools* 路径填写进去
          * 5 完成
       * java安装(重中之重,就因为这个没配利索焦躁了一晚上,我用的1.8版本)
-         * 1 下载*jdk*
+         * 1 下载 *jdk*
          * 2 安装
          * 3 配置系统变量
             * 新建 *JAVA_HOME* 路径是 *jdk* 路径
@@ -450,6 +450,7 @@ $ npm run build
             $ react-native run-android
             ```
          * 4 完成
+         ![效果](https://github.com/daifang/node-work/blob/master/xlzy/img/helloworld.png)
 **** 
 ### daifang  修改 2019-11-11
 # <a name='a3'>`用到的ES6方法`</a>
