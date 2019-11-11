@@ -356,7 +356,11 @@ $ npm run build
    * ### Store Action Reducer
    * ### Store 
    * ### Reducer 接受state和action并根据action.type返回对应的state
-
+   * ## Action
+      * 动作
+      ```
+      
+      ```
 * ## `Webpack 搭建 React环境`
    * 安装yarn
       ```
@@ -389,27 +393,62 @@ $ npm run build
       ```
       //css-loader 将所有css合并
       //style-loader 将css加到style标签
+      //配置解析是从右到左所以css-loader要放到最右边
       $ yarn add css-loadern style-loader -D
       ```
    * 加载 less 文件
       ```
       $ yarn add less-loader less -D
       ```
-   * 安装 React
+   * 安装 React-只需要安装基本
       ```
       $ yarn add React React-dom
       ```
-   * 使用 JSX
+   * 解析 JSX
       ```
       $ yarn add babel-loader@8.0.0-beta.0 @babel/core @babel/preset-env -D
       ```
    * 配置完成后 ，可以使用了！
 
 * ## <a name='a4'>`React-Native`</a>
-   * 安装
-   ```
-
-   ```
+   * 坑
+      * npm 全局安装的命令无法识别 ---> 解决方法：手动配置环境变量.解决之后连速度都快了呢(谁知道真假哈哈哈)
+      * 搞了2天仅仅才能在模拟器上运行....，太菜了
+   * 环境安装(Android Stdio + java + react-native)
+      * Android Stdio安装
+         * 1 下载并安装
+         * 2 选择自定义，自定义SDK的安装路径(很重要)
+         * 3 设置环境变量，新建ANDROID_HOME路径写SDK的路径
+         * 4 系统变量PATH中将SDK的platform-tools和tools路径填写进去
+         * 5 完成
+      * java安装(重中之重,就因为这个没配利索焦躁了一晚上,我用的1.8版本)
+         * 1 下载jdk
+         * 2 安装
+         * 3 配置系统变量
+            * 新建 *JAVA_HOME* 路径是 *jdk* 路径
+            * 系统变量 *Path* 下新建 路径填写 *jdk* 下 *bin* 路径
+            * 新建 *classpath* 填写 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar(非常重要，不然代码运行不动)
+      * react-native 命令(简单)
+         * 1 安装
+            ```
+            //没有yarn先安yarn
+            $ yarn add global react-native-cli
+            ```
+         * 2 创建 app
+            ```
+            //第一次可能会要10分钟左右，不要半路放弃
+            $ react-native init [name]
+            ```
+         * 3 运行 
+            ```
+            //也是第一次时间较长
+            //开启服务 8081
+            $ npm start
+            //在环境中安装并运行，代码可以先粘一份Hello world 试一试
+            $ react-native run-android
+            ```
+**** 
+### daifang  修改 2019-11-11
 # <a name='a3'>`用到的ES6方法`</a>
    * [详情请点击](https://github.com/daifang/js_LS/blob/master/ES6/ES6.md)
 ## Object.assign(obj_a,obj_b,obj_c,······)
