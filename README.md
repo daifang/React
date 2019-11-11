@@ -1,8 +1,8 @@
 ## 索引
 <a href = '#a1'>全局安装</a>  
 <a href = '#a2'>基本知识</a>  
-<a href = '#a3'>ES6</a> 
-<a href = '#a4'>React Native</a>
+<a href = '#a3'>ES6</a>   
+<a href = '#a4'>Install React Native</a>
 
 
 # `React`
